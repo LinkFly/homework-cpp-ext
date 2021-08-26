@@ -1,0 +1,6 @@
+﻿  lesson-memory-runtime.cpp
+C:\Users\LinkFly\Dropbox\courses\gb-ue4\homework-cpp-ext\lesson-memory-runtime\lesson-memory-runtime.cpp(24,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\LinkFly\Dropbox\courses\gb-ue4\homework-cpp-ext\lesson-memory-runtime\lesson-memory-runtime.cpp(25,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\LinkFly\Dropbox\courses\gb-ue4\homework-cpp-ext\lesson-memory-runtime\lesson-memory-runtime.cpp(40,32): warning C4018: '<': signed/unsigned mismatch
+C:\Users\LinkFly\Dropbox\courses\gb-ue4\homework-cpp-ext\lesson-memory-runtime\lesson-memory-runtime.cpp(142,14): warning C4244: 'initializing': conversion from 'std::streamoff' to 'size_t', possible loss of data
+  lesson-memory-runtime.vcxproj -> C:\Users\LinkFly\Dropbox\courses\gb-ue4\homework-cpp-ext\Debug\lesson-memory-runtime.exe
