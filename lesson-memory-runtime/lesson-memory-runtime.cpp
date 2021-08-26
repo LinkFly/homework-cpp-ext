@@ -133,7 +133,7 @@ int main()
 	//cout << "ints[0] = " << ints[0] << '\n'
 	//	<< "x = " << x << endl;
 
-	ifstream file("C:\\Users\\LinkFly\\Dropbox\\courses\\gb-ue4\\Tolstoy Leo. War and Peace.txt");
+	ifstream file("..\\Tolstoy Leo. War and Peace.txt");
 	if (!file.is_open()) {
 		cerr << "Failed open file\n";
 		return -1;
