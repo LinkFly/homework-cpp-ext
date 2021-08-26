@@ -1,4 +1,2 @@
 ﻿  hw2-memory-runtime.cpp
-C:\Users\LinkFly\Dropbox\courses\gb-ue4\homework-cpp-ext\hw2-memory-runtime\hw2-memory-runtime.cpp(54,14): warning C4244: 'initializing': conversion from 'std::streamoff' to 'size_t', possible loss of data
-C:\Users\LinkFly\Dropbox\courses\gb-ue4\homework-cpp-ext\hw2-memory-runtime\hw2-memory-runtime.cpp(115,19): warning C4018: '<': signed/unsigned mismatch
   hw2-memory-runtime.vcxproj -> C:\Users\LinkFly\Dropbox\courses\gb-ue4\homework-cpp-ext\Debug\hw2-memory-runtime.exe

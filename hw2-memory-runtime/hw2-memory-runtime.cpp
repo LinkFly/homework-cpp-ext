@@ -51,13 +51,14 @@ void read_book_to_vector(string& dest, const string& book_path) {
 		exit(-1);
 	}
 	file.seekg(0, std::ios::end);
-	size_t size = file.tellg();
+	size_t size = static_cast<size_t>(file.tellg());
 	file.seekg(0);
 	//string s(size, ' ');
 	dest.resize(size);
 	file.read(&dest[0], size);
 	file.close();
 }
+
 
 array<bool, 256> create_letters_check_buf() {
 	static auto fnToByte = [](char ch) { return static_cast<uint8_t>(ch); };
@@ -78,14 +79,51 @@ array<bool, 256> create_letters_check_buf() {
 	letters[fnToByte('Y')] = true;
 	return letters;
 }
+
+/****
+NOTE-1! Использование метода find класса string, мне казалось не подходящим, так 
+как с помощью этого метода производится поиск конкретного подходящего символа, тогда как у нас
+этих символов несколько (все гласные). Поэтому я дополнительно реализовал поиск глассных
+через ф-ию find_if.
+
+NOTE-2! Проверку, является ли буква глассной, я реализовал через разряженный массив значений,
+типа bool, где для глассных букв по индексу который представляется значением конкретной буквы,
+ лежит значение true, для остальных false. Сделал это из соображений эффективности (проходить
+ каждый раз по циклу, сравнивая все глассные буквы с проверяемой буквой - кажется очень 
+ неэффективным по скорости). Но оставил закомментированную. реализацию на цикле 
+ (чтобы соотв. заданию).
+
+NOTE-3! Результат: Два цикла отрабатывают быстрее - by_twice_for (подозреваю это из-за удобного
+для использования кэша алгоритма - проверяемая часть строки, кладётся в кэш и как правило 
+следующие данные для проверки читаются уже из кэша)
+*/
+
+vector<char> getAllVowels() {
+	return vector<char>{
+		'a', 'e', 'i', 'o', 'u', 'y',
+			'A', 'E', 'I', 'O', 'U', 'Y'
+	};
+}
+
 bool is_vowel(char ch) {
 	static array<bool, 256> letters = create_letters_check_buf();
 	return letters[static_cast<uint8_t>(ch)];
 }
 
+// Trivial implementation check char on vowel:
+//bool is_vowel(char ch) {
+//	static vector<char> vowels = getAllVowels();
+//	for (char vowel : vowels) {
+//		if (vowel == ch)
+//			return true;
+//	}
+//	return false;
+//}
+
 int by_count_if(const string& book) {
 	Timer timer("count_if");
 	auto res = count_if(book.begin(), book.end(), is_vowel);
+	cout << endl;
 	timer.print();
 	cout << "Result (by_count_if): " << res << " (size = " << book.size() << ")\n";
 	return 0;
@@ -104,22 +142,65 @@ int by_find_if(const string& book) {
 			++res;
 		}
 	}
+	cout << endl;
 	timer.print();
 	cout << "Result (by_find_if): " << res << " (size = " << book.size() << ")\n";
+	return 0;
+}
+
+int by_find_from_string(const string& book) {
+	static vector<char> vowels = getAllVowels();
+	Timer timer("string.find");
+	int res = 0;
+	for (char ch : vowels) {
+		size_t curPos = 0;
+		while (true) {
+			curPos = book.find(ch, curPos);
+			if (curPos == string::npos)
+				break;
+			else {
+				++curPos;
+				++res;
+			}
+		}
+	}
+	cout << endl;
+	timer.print();
+	cout << "Result (by_find_from_string): " << res << " (size = " << book.size() << ")\n";
 	return 0;
 }
 
 int by_for(const string& book) {
 	Timer timer("for");
 	int res = 0;
-	for(int i = 0; i < book.size(); ++i)
+	for(char ch : book)
 	{
-		if (is_vowel(book[i])) {
+		if (is_vowel(ch)) {
 			++res;
 		}
 	}
+	cout << endl;
 	timer.print();
 	cout << "Result (by_for): " << res << " (size = " << book.size() << ")\n";
+	return 0;
+}
+
+int by_twice_for(const string& book) {
+	static vector<char> vowels = getAllVowels();
+	Timer timer("by_twice_for");
+	int res = 0;
+	for (char chVowel : vowels) {
+		size_t curPos = 0;
+		for (char ch : book)
+		{
+			if (ch == chVowel) {
+				++res;
+			}
+		}
+	}
+	cout << endl;
+	timer.print();
+	cout << "Result (by_twice_for): " << res << " (size = " << book.size() << ")\n";
 	return 0;
 }
 
@@ -154,6 +235,8 @@ int main()
 	by_count_if(letters);
 	by_find_if(letters);
 	by_for(letters);
+	by_find_from_string(letters);
+	by_twice_for(letters);
 	return 0;
 }
 
