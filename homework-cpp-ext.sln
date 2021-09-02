@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hw2-memory-runtime", "hw2-m
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lesson-memory-runtime", "lesson-memory-runtime\lesson-memory-runtime.vcxproj", "{2CBF90D1-499B-4ED5-B366-E1E99A2932D5}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hw3-sequence-containers", "hw3-sequence-containers\hw3-sequence-containers.vcxproj", "{55452B5C-7CFF-48A2-8B96-6A396C465F2D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -41,6 +43,14 @@ Global
 		{2CBF90D1-499B-4ED5-B366-E1E99A2932D5}.Release|x64.Build.0 = Release|x64
 		{2CBF90D1-499B-4ED5-B366-E1E99A2932D5}.Release|x86.ActiveCfg = Release|Win32
 		{2CBF90D1-499B-4ED5-B366-E1E99A2932D5}.Release|x86.Build.0 = Release|Win32
+		{55452B5C-7CFF-48A2-8B96-6A396C465F2D}.Debug|x64.ActiveCfg = Debug|x64
+		{55452B5C-7CFF-48A2-8B96-6A396C465F2D}.Debug|x64.Build.0 = Debug|x64
+		{55452B5C-7CFF-48A2-8B96-6A396C465F2D}.Debug|x86.ActiveCfg = Debug|Win32
+		{55452B5C-7CFF-48A2-8B96-6A396C465F2D}.Debug|x86.Build.0 = Debug|Win32
+		{55452B5C-7CFF-48A2-8B96-6A396C465F2D}.Release|x64.ActiveCfg = Release|x64
+		{55452B5C-7CFF-48A2-8B96-6A396C465F2D}.Release|x64.Build.0 = Release|x64
+		{55452B5C-7CFF-48A2-8B96-6A396C465F2D}.Release|x86.ActiveCfg = Release|Win32
+		{55452B5C-7CFF-48A2-8B96-6A396C465F2D}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
