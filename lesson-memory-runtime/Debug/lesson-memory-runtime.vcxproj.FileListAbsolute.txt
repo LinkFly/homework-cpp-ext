@@ -1,2 +1,0 @@
-C:\Users\LinkFly\Dropbox\courses\gb-ue4\homework-cpp-ext\Debug\lesson-memory-runtime.exe.lastcodeanalysissucceeded
-C:\Users\LinkFly\Dropbox\courses\gb-ue4\homework-cpp-ext\lesson-memory-runtime\Debug\NativeCodeAnalysis.read.1.tlog
