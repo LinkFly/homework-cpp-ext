@@ -15,6 +15,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hw4-algorithms", "hw4-algor
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hw5-containers", "hw5-containers\hw5-containers.vcxproj", "{7244C848-B6F5-4F27-8BCD-7A9F3047D087}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hw6-concurrency", "hw6-concurrency\hw6-concurrency.vcxproj", "{E7B3EE27-0CD4-4175-888B-D5C3BD632D6B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -71,6 +73,14 @@ Global
 		{7244C848-B6F5-4F27-8BCD-7A9F3047D087}.Release|x64.Build.0 = Release|x64
 		{7244C848-B6F5-4F27-8BCD-7A9F3047D087}.Release|x86.ActiveCfg = Release|Win32
 		{7244C848-B6F5-4F27-8BCD-7A9F3047D087}.Release|x86.Build.0 = Release|Win32
+		{E7B3EE27-0CD4-4175-888B-D5C3BD632D6B}.Debug|x64.ActiveCfg = Debug|x64
+		{E7B3EE27-0CD4-4175-888B-D5C3BD632D6B}.Debug|x64.Build.0 = Debug|x64
+		{E7B3EE27-0CD4-4175-888B-D5C3BD632D6B}.Debug|x86.ActiveCfg = Debug|Win32
+		{E7B3EE27-0CD4-4175-888B-D5C3BD632D6B}.Debug|x86.Build.0 = Debug|Win32
+		{E7B3EE27-0CD4-4175-888B-D5C3BD632D6B}.Release|x64.ActiveCfg = Release|x64
+		{E7B3EE27-0CD4-4175-888B-D5C3BD632D6B}.Release|x64.Build.0 = Release|x64
+		{E7B3EE27-0CD4-4175-888B-D5C3BD632D6B}.Release|x86.ActiveCfg = Release|Win32
+		{E7B3EE27-0CD4-4175-888B-D5C3BD632D6B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
