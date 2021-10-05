@@ -4,4 +4,4 @@ Release
 **/.vs
 **/Debug
 **/Release
-**/**/build
+**/build
