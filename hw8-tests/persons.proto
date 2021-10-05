@@ -1,0 +1,19 @@
+syntax="proto3";
+package protobuf_ns.persons;
+
+message FullName {
+	string name = 1;
+	string surname = 2;
+	string patronymic = 3;
+}
+
+message Student {
+	FullName fullName = 1;
+	repeated int32 scores = 2;
+	int32 middle_score = 3;
+}
+
+message StudentsGroup {
+	repeated Student students = 1;
+}
+
